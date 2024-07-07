@@ -10,6 +10,7 @@ import customerRouter from './customer/customer.router.js';
 import favoriteRouter from './favorite/favorite.router.js';
 import couponRouter from './coupon/coupon.router.js';
 import reviewRouter from './review/review.router.js';
+import adminRouter from './AdminAuth/admin.router.js';
 import connectDB from '../../DB/connection.js';
 
 
@@ -43,6 +44,7 @@ app.use(cors(corsOptions));
    app.use('/coupon',couponRouter)
    app.use('/review',reviewRouter)
    app.use('/profile',profileRouter)
+   app.use('/admin',adminRouter)
    app.use('*', (req, res) => {
       return res.status(404).json({ message: "page not found" });
    })
